@@ -1,0 +1,13 @@
+# Cloudflare Tunnel configuration for this Flask app.
+# This is configured for odinroom.org.
+# After running `cloudflared tunnel create chat-server`, set the tunnel ID below.
+
+# Example:
+# tunnel: 12345678-abcd-4ef0-9876-0123456789ab
+# credentials-file: .cloudflared/12345678-abcd-4ef0-9876-0123456789ab.json
+
+tunnel: <TUNNEL_ID>
+ingress:
+  - hostname: odinroom.org
+    service: http://localhost:5000
+  - service: http_status:404
